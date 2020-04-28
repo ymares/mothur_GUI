@@ -1620,7 +1620,7 @@ def batchmode():
             messagebox.showinfo("Error", "Please select the\n\
 batch file.")
         else:
-            batchdir = Path(gfile).parent
+            batchdir = os.path.dirname(gfile)
             os.chdir(batchdir)
             os.system('cmd /k "mothur "' + gfile)
             root2b.destroy()
@@ -1639,7 +1639,7 @@ def commandmode():
             messagebox.showinfo("Error", "Please select the\n\
 Mothur executable file.")
         else:
-            mothdir = Path(gfile).parent
+            mothdir = os.path.dirname(gfile)
             os.chdir(mothdir)
             os.system('cmd /k "mothur"')
     root2c = tkinter.Toplevel()
